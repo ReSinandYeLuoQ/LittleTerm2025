@@ -1379,53 +1379,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831690633}
   m_CullTransparentMesh: 1
---- !u!1 &2099933883
-GameObject:
+--- !u!1001 &1060534285174325356
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2099933885}
-  - component: {fileID: 2099933884}
-  m_Layer: 0
-  m_Name: music
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2099933884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2099933883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9c079a004525204d8a1e8bcb333b659, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentSceneMusic: {fileID: 0}
-  sceneMusicPairs:
-  - sceneName: start
-    music: {fileID: 8300000, guid: 3428231b7f0c05d4489b8a303f1da9ae, type: 3}
-  - sceneName: main
-    music: {fileID: 8300000, guid: cfe8986ec6b75c7419922d51e9961ff7, type: 3}
---- !u!4 &2099933885
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2099933883}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 763.267, y: 320.75098, z: -5.069186}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1060534285357429457, guid: f562d07e1ddb022449866acb832149ed, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060534285357429457, guid: f562d07e1ddb022449866acb832149ed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 763.267
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060534285357429457, guid: f562d07e1ddb022449866acb832149ed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 320.75098
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060534285357429457, guid: f562d07e1ddb022449866acb832149ed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.069186
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060534285357429457, guid: f562d07e1ddb022449866acb832149ed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060534285357429457, guid: f562d07e1ddb022449866acb832149ed, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060534285357429457, guid: f562d07e1ddb022449866acb832149ed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060534285357429457, guid: f562d07e1ddb022449866acb832149ed, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060534285357429457, guid: f562d07e1ddb022449866acb832149ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060534285357429457, guid: f562d07e1ddb022449866acb832149ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060534285357429457, guid: f562d07e1ddb022449866acb832149ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060534285357429463, guid: f562d07e1ddb022449866acb832149ed, type: 3}
+      propertyPath: m_Name
+      value: music
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f562d07e1ddb022449866acb832149ed, type: 3}
