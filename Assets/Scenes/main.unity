@@ -280,8 +280,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -289,8 +289,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -651,7 +651,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10.1
+  orthographic size: 5.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1910,7 +1910,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1469108757}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 10.1
+    OrthographicSize: 5.2
     NearClipPlane: 0.95
     FarClipPlane: 1000
     Dutch: 0
