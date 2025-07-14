@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class WeaponSwing : MonoBehaviour
 {
     public Transform player;
@@ -12,7 +11,6 @@ public class WeaponSwing : MonoBehaviour
     public AnimationCurve swingCurve;
 
     private float timer = 0f;
-
     private enum State { Idle, Attacking, Returning }
     private State state = State.Idle;
 
@@ -30,27 +28,15 @@ public class WeaponSwing : MonoBehaviour
 
     void Update()
     {
+        // 鼠标方向（始终指向）
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = 0;
-        Vector3 dirToMouse = (mouseWorld - player.position).normalized;
-
-        // 玩家只左右面向（假设你自己控制Player的flipX）
-        if (dirToMouse.x < 0)
-        {
-            player.localScale = new Vector3(-1, 1, 1); // 朝左
-        }
-        else
-        {
-            player.localScale = new Vector3(1, 1, 1);  // 朝右
-        }
+        attackDirection = (mouseWorld - player.position).normalized;
 
         switch (state)
         {
             case State.Idle:
                 timer += Time.deltaTime;
-
-                // 停留状态，武器位置贴玩家侧边一点，方向朝鼠标自由角度
-                attackDirection = dirToMouse;
                 transform.position = player.position + attackDirection * 0.5f;
 
                 if (timer >= restDuration)
@@ -91,8 +77,8 @@ public class WeaponSwing : MonoBehaviour
                 break;
         }
 
-        // 武器旋转自由朝向鼠标（无死角）
+        // 设置旋转：武器底部朝向玩家，顶部朝向鼠标方向
         float angle = Mathf.Atan2(attackDirection.y, attackDirection.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90f); // -90 是为了让模型“底部”朝向玩家
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talentName: 4
   description: 4
-  icon: {fileID: 7482667652216324306, guid: f22f86995bee87f478ed534551398bb8, type: 3}
+  icon: {fileID: 21300000, guid: 2b5df95b1def8de4183a22e48665c38c, type: 3}
   tree: 0
   tier: 0
-  talentID: 0
+  talentID: 8
