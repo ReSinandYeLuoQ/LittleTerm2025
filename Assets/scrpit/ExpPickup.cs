@@ -2,15 +2,23 @@ using UnityEngine;
 
 public class ExpPickup : MonoBehaviour
 {
-    public int expValue = 1; // Ã¿¸ö¾­ÑéµãÊı
+    public int expValue = 1; // æ¯ä¸ªç»éªŒå€¼
 
     private Transform player;
     public float moveSpeed = 5f;
-    public float attractDistance = 2.5f; // ±»Îü¸½µÄ¾àÀë
+    public float attractDistance = 2.5f; // å¸å¼•çš„è·ç¦»
+
+    // æ·»åŠ  AudioSource å¼•ç”¨
+    public AudioSource pickupSound;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        // å¦‚æœæ²¡æœ‰æ‰‹åŠ¨èµ‹å€¼ï¼Œå°è¯•è·å–ç»„ä»¶
+        if (pickupSound == null)
+        {
+            pickupSound = GetComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -33,6 +41,11 @@ public class ExpPickup : MonoBehaviour
             if (playerExp != null)
             {
                 playerExp.AddExp(expValue);
+                // æ’­æ”¾æ‹¾å–éŸ³æ•ˆ
+                if (pickupSound != null)
+                {
+                    pickupSound.Play();
+                }
             }
 
             Destroy(gameObject);
