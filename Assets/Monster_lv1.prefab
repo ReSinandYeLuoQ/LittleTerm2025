@@ -178,7 +178,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   expPrefab: {fileID: 5904493744854451829, guid: d50b21ee4490b234d803a11bcc28b100, type: 3}
   specialItemPrefab: {fileID: 5904493744854451829, guid: d50b21ee4490b234d803a11bcc28b100, type: 3}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 67ca5454c607a6e4ca8f066976160fb6, type: 3}
 --- !u!82 &-4987077282442916218
 AudioSource:
   m_ObjectHideFlags: 0
@@ -190,7 +190,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 67ca5454c607a6e4ca8f066976160fb6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
