@@ -676,7 +676,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u97F3\u4E50\uFF1AInfinity - DDRKirby(ISQ)\n\n"
+  m_text: "\u4E2D\u56FD\u4F20\u5A92\u5927\u5B66\nCUC\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bdeac59274de5e84db09788a64ee0230, type: 2}
   m_sharedMaterial: {fileID: 3965943049622237788, guid: bdeac59274de5e84db09788a64ee0230, type: 2}
@@ -1783,7 +1783,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5236\u4F5C\uFF1A\u5F20\u6DA6\u749E\n\t\u8463\u653F\u5EF7\n\t\u5468\u6631\u5609\n\t\u9093\u5B87\u5F64\n\t\u6C88\u67CF\u6210"
+  m_text: "\u5236\u4F5C\uFF1A\u5F20\u6DA6\u749E\n\t\u8463\u653F\u5EF7\n\t\u5468\u6631\u5609\n\t\u9093\u5B87\u5F64\n\t\u6C88\u67CF\u6210\n\u97F3\u4E50\uFF1AInfinity
+    - DDRKirby(ISQ)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bdeac59274de5e84db09788a64ee0230, type: 2}
   m_sharedMaterial: {fileID: 3965943049622237788, guid: bdeac59274de5e84db09788a64ee0230, type: 2}

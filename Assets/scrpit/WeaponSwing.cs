@@ -3,18 +3,24 @@
 public class WeaponSwing : MonoBehaviour
 {
     public Transform player;
+    public Animator animator; // 👈 新增：动画控制器
 
-    public float attackDuration = 1f;
-    public float returnDuration = 1f;
-    public float restDuration = 1f;
+    public float baseAttackDuration = 1f;
+    public float baseReturnDuration = 1f;
+    public float baseRestDuration = 1f;
     public float swingDistance = 3f;
     public AnimationCurve swingCurve;
+
+    private float attackDuration;
+    private float returnDuration;
+    private float restDuration;
 
     private float timer = 0f;
     private enum State { Idle, Attacking, Returning }
     private State state = State.Idle;
 
     private Vector3 attackDirection;
+    private PlayerStats stats; // 👈 新增
 
     void Start()
     {
@@ -23,12 +29,22 @@ public class WeaponSwing : MonoBehaviour
             swingCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
         }
 
-        transform.position = player.position;
+        if (player != null)
+        {
+            transform.position = player.position;
+            stats = player.GetComponent<PlayerStats>();
+        }
+
+        UpdateDurations();
     }
 
     void Update()
     {
-        // 鼠标方向（始终指向）
+        if (stats != null)
+        {
+            UpdateDurations(); // 实时调整持续时间
+        }
+
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = 0;
         attackDirection = (mouseWorld - player.position).normalized;
@@ -43,6 +59,9 @@ public class WeaponSwing : MonoBehaviour
                 {
                     timer = 0f;
                     state = State.Attacking;
+
+                    if (animator != null)
+                        animator.SetTrigger("Swing"); // 👈 播放动画（只在攻击阶段）
                 }
                 break;
 
@@ -77,8 +96,17 @@ public class WeaponSwing : MonoBehaviour
                 break;
         }
 
-        // 设置旋转：武器底部朝向玩家，顶部朝向鼠标方向
         float angle = Mathf.Atan2(attackDirection.y, attackDirection.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle - 90f); // -90 是为了让模型“底部”朝向玩家
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+    }
+
+    void UpdateDurations()
+    {
+        float multiplier = stats != null ? stats.attackSpeedMultiplier : 1f;
+        multiplier = Mathf.Max(0.1f, multiplier); // 防止除0
+
+        attackDuration = baseAttackDuration / multiplier;
+        returnDuration = baseReturnDuration / multiplier;
+        restDuration = baseRestDuration / multiplier;
     }
 }

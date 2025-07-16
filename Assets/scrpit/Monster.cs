@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 
 public class Monster : MonoBehaviour
 {
@@ -22,11 +23,25 @@ public class Monster : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
 
+    public AudioClip deathSound; // 拖音效资源进来
+    private AudioSource audioSource;
+
+
+
+
     void Start()
     {
         currentHP = maxHP;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+
 
         // 初始化贴图组件
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -54,11 +69,11 @@ public class Monster : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int dmg)
+    public void TakeDamage(float dmg)
     {
         if (isInvincible) return;
 
-        currentHP -= dmg;
+        currentHP -= (int)dmg;
 
         // 触发受伤变色
         if (spriteRenderer != null)
@@ -101,6 +116,11 @@ public class Monster : MonoBehaviour
 
     void Die()
     {
+        if (deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
+
         GetComponent<Collider2D>().enabled = false;
         StopAllCoroutines();
         StartCoroutine(DeathSequence());
@@ -127,9 +147,10 @@ public class Monster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        PlayerStats stats = player.GetComponent<PlayerStats>();
         if (other.CompareTag("Weapon"))
         {
-            TakeDamage(1);
+            TakeDamage(13f* (stats.attackPowerMultiplier));
         }
     }
 }

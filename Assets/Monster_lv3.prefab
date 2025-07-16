@@ -169,9 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71399051efdc3b749ad6dbdd9c69cc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   level: 3
   speed: 1
-  maxHP: 3
+  maxHP: 100
   invincibleTime: 0.5
   animator: {fileID: 0}
   expPrefab: {fileID: 5904493744854451829, guid: d50b21ee4490b234d803a11bcc28b100, type: 3}
@@ -188,4 +189,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb005cbe149d134ea6600b9b6938cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 15
+  hurtColor: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 1

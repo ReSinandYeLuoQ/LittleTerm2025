@@ -6,6 +6,7 @@ public class TalentDatabase : MonoBehaviour
     public static TalentDatabase Instance;
     public List<TalentData> allTalents;
 
+
     private void Awake() => Instance = this;
 
     public TalentData GetTalentByID(int id)

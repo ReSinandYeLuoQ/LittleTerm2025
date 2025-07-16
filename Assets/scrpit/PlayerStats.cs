@@ -139,7 +139,7 @@ public class PlayerStats : MonoBehaviour
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-            foreach (GameObject targetEnemy in enemies) // ✅ 改名就行了
+            foreach (GameObject targetEnemy in enemies)
             {
                 Monster monster = targetEnemy.GetComponent<Monster>();
                 if (monster != null)
