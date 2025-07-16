@@ -39,9 +39,11 @@ public class Monster : MonoBehaviour
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
+            // 设置音效参数
+            audioSource.playOnAwake = false; // 不在唤醒时播放
+            audioSource.loop = false; // 不循环播放
+            audioSource.volume = 1f; // 音量设置为 1
         }
-
-
 
         // 初始化贴图组件
         spriteRenderer = GetComponent<SpriteRenderer>();
